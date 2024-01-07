@@ -10,7 +10,7 @@
         currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
         <ng-template pTemplate="caption">
             <div class="flex align-items-center justify-content-between">
-                <h5 class="m-0">Manage Blog</h5>
+                <h5 class="m-0">Gestion du Blog</h5>
                 <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
                     <input pInputText type="text" (input)="dt.filterGlobal($any($event.target).value, 'contains')" placeholder="Tìm kiếm" />`
@@ -23,9 +23,9 @@
                     <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
                 </th>
                 <th>Image</th>
-                <th pSortableColumn="name"  style="min-width:10rem">Title <p-sortIcon field="name"></p-sortIcon></th>
+                <th pSortableColumn="name"  style="min-width:10rem">Titre <p-sortIcon field="name"></p-sortIcon></th>
                 <th pSortableColumn="price"  style="min-width:15rem">Description <p-sortIcon field="price"></p-sortIcon></th>
-                <th pSortableColumn="category" style="min-width:15rem">Content <p-sortIcon field="category"></p-sortIcon></th>
+                <th pSortableColumn="category" style="min-width:15rem">Contenu <p-sortIcon field="category"></p-sortIcon></th>
                 <th style="min-width:10rem">Action</th>
                 <th></th>
             </tr>
@@ -60,7 +60,7 @@
     <ng-template pTemplate="content">
         <!-- <img [src]="'assets/showcase/images/demo/product/' + product.image" [alt]="product.image" class="product-image" *ngIf="product.image"> -->
         <div class="field">
-            <label for="name">Title</label>
+            <label for="name">Titre</label>
             <input type="text" pInputText id="title" [(ngModel)]="blogForm.title" required autofocus />
             <!-- <small class="p-error" *ngIf="submitted && !product.name">Name is required.</small> -->
         </div>
@@ -76,7 +76,7 @@
             <textarea id="description" pInputTextarea [(ngModel)]="blogForm.description" required rows="2" cols="20"></textarea>
         </div>
         <div class="field">
-            <label for="content">Content</label>
+            <label for="content">Contenu</label>
             <textarea id="content" pInputTextarea [(ngModel)]="blogForm.content" required rows="4" cols="20"></textarea>
         </div>
 
@@ -94,7 +94,7 @@
                     </div>
                 </div>
                 <p-divider align="left" >
-                    Ảnh đã tải lên
+                    Photo téléchargée
                 </p-divider>
                 <div class="grid">
                     <div class="col-4 list-image flex align-items-center" *ngFor="let image of listImage" >
@@ -113,9 +113,9 @@
     </ng-template>
 
     <ng-template pTemplate="footer">
-        <button type="submit" pButton *ngIf="!onUpdate" (click)="createBlog()">Tạo mới</button>
-        <button type="submit" pButton *ngIf="onUpdate" (click)="updateBlog()" >Cập nhật</button>
-        <button pButton type="button" class="p-button-danger ml-3" (click)="showForm=false">Hủy</button>
+        <button type="submit" pButton *ngIf="!onUpdate" (click)="createBlog()">Nouveau</button>
+        <button type="submit" pButton *ngIf="onUpdate" (click)="updateBlog()" >Mise à jour</button>
+        <button pButton type="button" class="p-button-danger ml-3" (click)="showForm=false">Annuler</button>
     </ng-template>
 </p-dialog>
 
@@ -123,7 +123,7 @@
 <p-dialog header="Xác nhận" [(visible)]="onDelete" [style]="{width :'30vw'}" [modal]="true" [transitionOptions]="'.3s'">
     <div>
         <i class="pi pi pi-exclamation-triangle"></i>
-        <span class="ml-2">Bạn có chắc xóa <span>{{blogForm.title}}</span> ?</span>
+        <span class="ml-2">Êtes-vous sûr de vouloir supprimer<span>{{blogForm.title}}</span> ?</span>
     </div>
     <div class="flex justify-content-end mt-3">
         <p-button label="Yes" icon="pi pi-check" class="mr-2" (click)="deleteBlog()"></p-button>

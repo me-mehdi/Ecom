@@ -35,6 +35,7 @@ public class ImageController {
 
 
     @GetMapping("/")
+    @Operation(summary="Obtenez tous les images ")
     public ResponseEntity<?> getList(){
         List<Image> listImage = imageService.getListImage();
 
@@ -50,7 +51,7 @@ public class ImageController {
     }
 
     @PostMapping("/upload-file")
-    @Operation(summary="Upload file lên database")
+    @Operation(summary="Télécharger des fichiers dans la base de données")
     public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile file){
         File uploadDir = new File(UPLOAD_DIR);
         if (!uploadDir.exists()) {

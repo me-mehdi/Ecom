@@ -46,7 +46,7 @@ export class LoginPageComponent implements OnInit {
         this.isLoggedIn = true;
         this.isLoginFailed = false;
         this.roles = this.storageService.getUser().roles;
-        this.showSuccess("Đăng nhập thành công!!");
+        this.showSuccess("Connecté avec succès!!");
         this.router.navigate(['/']);
       },error: err =>{
         console.log(err);
@@ -63,7 +63,7 @@ export class LoginPageComponent implements OnInit {
       next: res =>{
         this.isSuccessful = true;
         this.isSignUpFailed = false;
-        this.showSuccess("Đăng ký thành công")
+        this.showSuccess("Inscription réussie")
         this.loginForm.username = username;
         this.loginForm.password = password;
         this.login();

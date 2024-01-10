@@ -113,7 +113,7 @@ export class IndexComponent implements OnInit {
         this.isLoggedIn = true;
         this.isLoginFailed = false;
         this.roles = this.storageService.getUser().roles;
-        this.showSuccess("Đăng nhập thành công!!");
+        this.showSuccess("Connecté avec succès!!");
         this.authModal = false;
         
       },error: err =>{
@@ -132,7 +132,7 @@ export class IndexComponent implements OnInit {
       next: res =>{
         this.isSuccessful = true;
         this.isSignUpFailed = false;
-        this.showSuccess("Đăng ký thành công")
+        this.showSuccess("Inscription réussie")
         this.authModal = false;
       },error: err =>{
         this.showError(err.message);
@@ -148,7 +148,7 @@ export class IndexComponent implements OnInit {
         this.storageService.clean();
         this.isLoggedIn = false;
         this.authModal = false;
-        this.showSuccess("Bạn đã đăng xuất!!");
+        this.showSuccess("Vous êtes déconnecté !!");
       },error: err=>{
         this.showError(err.message);
       }

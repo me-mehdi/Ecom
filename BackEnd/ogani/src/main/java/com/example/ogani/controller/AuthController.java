@@ -48,7 +48,7 @@ public class AuthController {
     private UserService userService;
 
     @PostMapping("/login")
-    @Operation(summary = "Đăng nhập")
+    @Operation(summary = "Se connecter")
     public ResponseEntity<?> login(@Valid @RequestBody LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
@@ -77,7 +77,7 @@ public class AuthController {
 
 
     @PostMapping("/register")
-    @Operation(summary="Đăng ký")
+    @Operation(summary="Registre")
     public ResponseEntity<?> register(@Valid @RequestBody CreateUserRequest request){
       
         userService.register(request);
@@ -86,7 +86,7 @@ public class AuthController {
     }
 
     @PostMapping("/logout")
-    @Operation(summary="Đăng xuất")
+    @Operation(summary="Se déconnecter")
     public ResponseEntity<?> logoutUser() {
       ResponseCookie cookie = jwtUtils.getCleanJwtCookie();
       return ResponseEntity.ok().header(HttpHeaders.SET_COOKIE, cookie.toString())

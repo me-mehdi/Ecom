@@ -16,37 +16,37 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CreateProductRequest {
     
-    @NotNull(message = "Tên sản phẩm rỗng")
-    @NotEmpty(message="Tên sản phẩm rỗng")
-    @Schema(description = "Tên sản phẩm",example="Product1",required=true)
-    @Size(min=5,max=50,message="Tên sản phẩm từ 3-50 ký tự")
+    @NotNull(message = "Le nom du produit est vide")
+    @NotEmpty(message="Le nom du produit est vide")
+    @Schema(description = "Nom du produit",example="Product1",required=true)
+    @Size(min=5,max=50,message="Nom du produit de 3 à 50 caractères")
     private String name;
 
-    @NotNull(message = "Mô tả rỗng")
-    @NotEmpty(message="Mô tả rỗng")
-    @Schema(description = "Mô tả sản phẩm",example="Đây là sản phẩm thứ 1")
-    @Size(min=5,max=1000,message="Mô tả sản phẩm từ 5-1000 ký tự")
+    @NotNull(message = "Description vide")
+    @NotEmpty(message="Description vide")
+    @Schema(description = "Description du produit",example="C'est le deuxième produit")
+    @Size(min=5,max=1000,message="Description du produit de 5 à 1 000 caractères")
     private String description;
 
-    @NotNull(message = "Giá tiền rỗng")
-    @NotEmpty(message = "Giá tiền rỗng")
-    @Schema(description = "Giá sản phẩm",example = "12")
-    @Size(min=0,message="Giá tiền sản phẩm lớn hơn 0")
+    @NotNull(message = "Prix ​​vide")
+    @NotEmpty(message = "Prix ​​vide")
+    @Schema(description = "Prix ​​du produit",example = "12")
+    @Size(min=0,message="Le prix du produit est supérieur à 0")
     private long price;
 
-    @NotNull(message = "Số lượng sản phẩm")
-    @NotEmpty(message="Số lượng sản phẩm")
-    @Schema(description = "Số lượng sản phẩm",example="12")
-    @Size(min=0,message="Số lượng sản phẩm từ 0")
+    @NotNull(message = "Le nombre de produits")
+    @NotEmpty(message="Le nombre de produits")
+    @Schema(description = "Le nombre de produits",example="12")
+    @Size(min=0,message="Nombre de produits de 0")
     private int quantity;
 
-    @NotNull(message = "Danh mục rỗng")
-    @NotEmpty(message = "Danh mục rỗng")
-    @Schema(description = "ID của danh mục",example="1")
+    @NotNull(message = "Catégorie vide")
+    @NotEmpty(message = "Catégorie vide")
+    @Schema(description = "ID de catégorie",example="1")
     private long categoryId;
 
-    @NotNull(message="Ảnh sản phẩm rỗng")
-    @Schema(description="Mảng Id của hình ảnh",example="[1,2,3]")
+    @NotNull(message="Photo de produit vide")
+    @Schema(description="Tableau d'identifiants d'image",example="[1,2,3]")
     private Set<Long> imageIds;
 
 	public String getName() {

@@ -13,19 +13,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CreateOrderDetailRequest {
 
-    @NotNull(message="Tên sản phẩm rỗng")
-    @NotEmpty(message = "Tên sản phẩm rỗng")
-    @Size(min=5,max=50,message="Tên sản phẩm từ 5-50 ký tự")
+    @NotNull(message="Le nom du produit est vide")
+    @NotEmpty(message = "Le nom du produit est vide")
+    @Size(min=5,max=50,message="Nom du produit de 5 à 50 caractères")
     private String name;
 
-    @NotNull(message="Giá sản phẩm rỗng")
-    @NotEmpty(message="Giá sản phẩm rỗng")
-    @Size(min=0,message ="Giá sản phẩm từ 0 trở lên")
+    @NotNull(message="Le prix du produit est vide")
+    @NotEmpty(message="Le prix du produit est vide")
+    @Size(min=0,message ="Prix ​​du produit à partir de 0 ou plus")
     private long price;
 
-    @NotNull(message = "Số lượng sản phẩm rỗng")
-    @NotEmpty(message = "Số lượng sản phẩm rỗng")
-    @Size(min = 1,message="Số lượng sản phẩm từ 1 trở lên")
+    @NotNull(message = "Nombre de produits vides")
+    @NotEmpty(message = "Nombre de produits vides")
+    @Size(min = 1,message="La quantité de produits est de 1 ou plus")
     private int quantity;
 
     private long subTotal;

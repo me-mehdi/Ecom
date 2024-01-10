@@ -17,43 +17,43 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CreateOrderRequest {
     
-    @NotNull(message="Họ khách hàng rỗng")
-    @NotEmpty(message="Họ khách hàng rỗng")
-    @Size(min=3,max=50,message="Họ khách hàng từ 3-50 ký tự")
+    @NotNull(message="Le nom de famille du client est vide")
+    @NotEmpty(message="Le nom de famille du client est vide")
+    @Size(min=3,max=50,message="Nom de famille du client de 3 à 50 caractères")
     private String firstname;
     
-    @NotNull(message="Tên khách hàng rỗng")
-    @NotEmpty(message="Tên khách hàng rỗng")
-    @Size(min=3,max=50,message="Tên khách hàng từ 3-50 ký tự")
+    @NotNull(message="Le nom du client est vide")
+    @NotEmpty(message="Le nom du client est vide")
+    @Size(min=3,max=50,message="Nom du client de 3 à 50 caractères")
     private String lastname;
 
-    @NotNull(message="Tên quốc gia rỗng")
-    @NotEmpty(message="Tên quốc gia rỗng")
+    @NotNull(message="Nom du pays vide")
+    @NotEmpty(message="Nom du pays vide")
     private String country;
 
-    @NotNull(message="Tên địa chỉ rỗng")
-    @NotEmpty(message="Tên địa chỉ rỗng")
+    @NotNull(message="Nom d'adresse vide")
+    @NotEmpty(message="Nom d'adresse vide")
     private String address;
 
-    @NotNull(message="Tên quốc gia rỗng")
-    @NotEmpty(message="Tên quốc gia rỗng")
+    @NotNull(message="Nom du pays vide")
+    @NotEmpty(message="Nom du pays videg")
     private String town;
 
-    @NotNull(message="Tên khu vực rỗng")
-    @NotEmpty(message="Tên khu vực rỗng")
+    @NotNull(message="Nom de la zone vide")
+    @NotEmpty(message="Nom de la zone vide")
     private String state;
 
-    @NotNull(message ="Mã bưu điện rỗng")
-    @NotEmpty(message ="Mã bưu điện rỗng")
+    @NotNull(message ="Le code postal est vide")
+    @NotEmpty(message ="Le code postal est vide")
     private long postCode;
 
-    @NotNull(message = "Email rỗng")
-    @NotEmpty(message = "Email rỗng")
-    @Email(message = "Email không đúng định dạng")
+    @NotNull(message = "E-mail vide")
+    @NotEmpty(message = "E-mail vide")
+    @Email(message = "Email Malformé")
     private String email;
      
-    @NotNull(message="Số điện thoại rỗng")
-    @NotEmpty(message="Số điện thoại rỗng")
+    @NotNull(message="Numéro de téléphone vide")
+    @NotEmpty(message="Numéro de téléphone vide")
     private String phone;
 
     private String note;

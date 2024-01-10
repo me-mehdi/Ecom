@@ -1,19 +1,19 @@
 <p-card class="card">
     <p-toolbar styleClass="mb-4 gap-2">
         <ng-template pTemplate="left">
-            <button pButton pRipple label="Thêm Blog" icon="pi pi-plus" class="p-button-success mr-2" (click)="showNew()" ></button>
+            <button pButton pRipple label="Ajouter un Blog" icon="pi pi-plus" class="p-button-success mr-2" (click)="showNew()" ></button>
         </ng-template>
     </p-toolbar>
 
     <p-table #dt [value]="listBlog" [rows]="10" [paginator]="true" [globalFilterFields]="['title','name']" [tableStyle]="{'min-width': '75rem'}"
         [rowHover]="true" dataKey="id"
-        currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+        currentPageReportTemplate="Affichage de {first} à {last} sur {totalRecords} entrées" [showCurrentPageReport]="true">
         <ng-template pTemplate="caption">
             <div class="flex align-items-center justify-content-between">
                 <h5 class="m-0">Gestion du Blog</h5>
                 <span class="p-input-icon-left">
                     <i class="pi pi-search"></i>
-                    <input pInputText type="text" (input)="dt.filterGlobal($any($event.target).value, 'contains')" placeholder="Tìm kiếm" />`
+                    <input pInputText type="text" (input)="dt.filterGlobal($any($event.target).value, 'contains')" placeholder="Rechercher" />`
                 </span>
             </div>
         </ng-template>
@@ -47,7 +47,7 @@
         </ng-template>
         <ng-template pTemplate="summary">
             <div class="flex align-items-center justify-content-between">
-                <!-- In total there are {{products ? products.length : 0 }} products. -->
+                <!-- En tout, il y a {{listBlog ? listBlog.length : 0 }} blogs. -->
             </div>
         </ng-template>
     </p-table>
@@ -56,19 +56,19 @@
 
 
 
-<p-dialog [(visible)]="showForm" [style]="{width: '30vw'}" header="Product Details" [modal]="true" styleClass="p-fluid">
+<p-dialog [(visible)]="showForm" [style]="{width: '30vw'}" header="Détails du Blog" [modal]="true" styleClass="p-fluid">
     <ng-template pTemplate="content">
         <!-- <img [src]="'assets/showcase/images/demo/product/' + product.image" [alt]="product.image" class="product-image" *ngIf="product.image"> -->
         <div class="field">
-            <label for="name">Titre</label>
+            <label for="title">Titre</label>
             <input type="text" pInputText id="title" [(ngModel)]="blogForm.title" required autofocus />
-            <!-- <small class="p-error" *ngIf="submitted && !product.name">Name is required.</small> -->
+            <!-- <small class="p-error" *ngIf="submitted && !product.name">Le nom est obligatoire.</small> -->
         </div>
 
         <div class="field">
             <label for="name">Tag</label>
             <p-multiSelect [options]="listTag" [(ngModel)]="selectedTags" optionLabel="name" optionValue="id"></p-multiSelect>
-            <!-- <small class="p-error" *ngIf="submitted && !product.name">Name is required.</small> -->
+            <!-- <small class="p-error" *ngIf="submitted && !product.name">Le nom est obligatoire.</small> -->
         </div>
 
         <div class="field">
@@ -81,16 +81,16 @@
         </div>
 
         <div class="field">
-            <button pButton type="button" class="p-button-success w-auto" (click)="onChooseImage()" > Chọn ảnh</button>
-            <p-dialog header="Chọn ảnh" [(visible)]="showImage" position="top" [modal]="true" [style]="{width: '40vw'}" [transitionOptions]="'.3s'">
+            <button pButton type="button" class="p-button-success w-auto" (click)="onChooseImage()" > Choisir une image</button>
+            <p-dialog header="Choisir une image" [(visible)]="showImage" position="top" [modal]="true" [style]="{width: '40vw'}" [transitionOptions]="'.3s'">
                 <div class="flex justify-content-between">
                     <div>
                         <input type="file" #file (change)="uploadFile($event)" hidden>
-                        <button pButton (click)="file.click()" label="Tải ảnh lên" icon="pi pi-plus" class="p-button-warning w-auto"></button>
+                        <button pButton (click)="file.click()" label="Télécharger une image" icon="pi pi-plus" class="p-button-warning w-auto"></button>
                     </div>
                     <div>
-                        <button pButton class="p-button-primary w-auto" label="Chọn ảnh" [disabled]="disabled" (click)="chooseImage()"></button>
-                        <button pButton class="p-button-danger ml-2 w-auto" icon="pi pi-trash " label="Xóa ảnh" [disabled]="disabled"></button>
+                        <button pButton class="p-button-primary w-auto" label="Choisir une image" [disabled]="disabled" (click)="chooseImage()"></button>
+                        <button pButton class="p-button-danger ml-2 w-auto" icon="pi pi-trash " label="Supprimer l'image" [disabled]="disabled"></button>
                     </div>
                 </div>
                 <p-divider align="left" >
@@ -120,13 +120,13 @@
 </p-dialog>
 
 
-<p-dialog header="Xác nhận" [(visible)]="onDelete" [style]="{width :'30vw'}" [modal]="true" [transitionOptions]="'.3s'">
+<p-dialog header="Confirmation" [(visible)]="onDelete" [style]="{width :'30vw'}" [modal]="true" [transitionOptions]="'.3s'">
     <div>
         <i class="pi pi pi-exclamation-triangle"></i>
-        <span class="ml-2">Êtes-vous sûr de vouloir supprimer<span>{{blogForm.title}}</span> ?</span>
+        <span class="ml-2">Êtes-vous sûr de vouloir supprimer <span>{{blogForm.title}}</span> ?</span>
     </div>
     <div class="flex justify-content-end mt-3">
-        <p-button label="Yes" icon="pi pi-check" class="mr-2" (click)="deleteBlog()"></p-button>
-        <p-button label="No" icon="pi pi-times" (click)="onDelete=false"></p-button>
+        <p-button label="Oui" icon="pi pi-check" class="mr-2" (click)="deleteBlog()"></p-button>
+        <p-button label="Non" icon="pi pi-times" (click)="onDelete=false"></p-button>
     </div>
 </p-dialog>

@@ -69,7 +69,7 @@ export class TagComponent implements OnInit {
     this.tagService.createTag(name).subscribe({
       next: res =>{
         this.getList();
-        this.showSuccess("Tạo danh mục thành công!");
+        this.showSuccess("Créez un tag réussi!");
         this.displayForm = false;
       },error: err=>{
         this.showError(err.message);
@@ -82,7 +82,7 @@ export class TagComponent implements OnInit {
     this.tagService.updateTag(id,name).subscribe({
       next: res =>{
         this.getList();
-        this.showSuccess("Cập nhật danh mục thành công!");
+        this.showSuccess("Répertoire mis à jour avec succès !");
         this.displayForm = false;
       },error: err =>{
         this.showError(err.message);
@@ -94,7 +94,7 @@ export class TagComponent implements OnInit {
     this.tagService.enableTag(id).subscribe({
       next: res =>{
         this.getList();
-        this.showSuccess("Cập nhật thành công!!");
+        this.showSuccess("Mise à jour réussie!!");
 
       },error: err=>{
         this.showError(err.message);
@@ -107,7 +107,7 @@ export class TagComponent implements OnInit {
     this.tagService.deleteTag(id).subscribe({
       next: res =>{
         this.getList();
-        this.showWarn("Xóa danh mục thành công!!");
+        this.showWarn("Suppression de la catégorie réussie !!");
         this.deleteForm = false;
       },error: err=>{
         this.showError(err.message);

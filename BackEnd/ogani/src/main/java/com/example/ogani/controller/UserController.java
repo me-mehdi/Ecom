@@ -28,14 +28,14 @@ public class UserController {
     
 
     @GetMapping("/")
-    @Operation(summary="Lấy ra user bằng username")
+    @Operation(summary="Obtenez l'utilisateur par nom d'utilisateur")
     public ResponseEntity<User> getuser(@RequestParam("username") String username){
         User user = userService.getUserByUsername(username);
         return ResponseEntity.ok(user);
     }
 
     @PutMapping("/update")
-    @Operation(summary="Cập nhật user")
+    @Operation(summary="Mettre à jour les utilisateurs")
     public ResponseEntity<User> updateProfile(@RequestBody UpdateProfileRequest request){
         User user = userService.updateUser(request);
 

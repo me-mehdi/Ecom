@@ -42,7 +42,7 @@ public class ImageController {
     }
 
     @GetMapping("/user/{id}")
-    @Operation(summary="Lấy ra danh sách hình ảnh của user bằng user_id")
+    @Operation(summary="Obtenez une liste des images de l'utilisateur par user_id")
     public ResponseEntity<?> getListByUser(@PathVariable long userId){
         List<Image> listImage = imageService.getListByUser(userId);
 
@@ -61,7 +61,7 @@ public class ImageController {
         String extension = originalFilename.substring(originalFilename.lastIndexOf(".") + 1);;
         if (originalFilename != null && originalFilename.length() > 0) {
             if (!extension.equals("png") && !extension.equals("jpg") && !extension.equals("gif") && !extension.equals("svg") && !extension.equals("jpeg")) {
-                throw new BadRequestException("Không hỗ trợ định dạng file này");
+                throw new BadRequestException("Ce format de fichier n'est pas pris en charge");
             }
             try {
                 Image img = new Image();
@@ -80,11 +80,11 @@ public class ImageController {
                 imageService.save(img);
                 return ResponseEntity.ok(img);
             } catch (Exception e) {
-                throw new InternalServerException("Lỗi khi upload file");
+                throw new InternalServerException("Erreur lors du téléchargement du fichier");
             }
         }
 
-        throw new BadRequestException("File không hợp lệ");
+        throw new BadRequestException("Fichier non valide");
 
     }
 }

@@ -33,7 +33,7 @@ public class BlogController {
     private BlogService blogService;
 
     @GetMapping("/")
-    @Operation(summary="Lấy tất cả danh sách blog")
+    @Operation(summary="Vous pouvez également visiter ce blog")
     public ResponseEntity<List<Blog>> getList(){
         List<Blog> list = blogService.getList();
 
@@ -42,7 +42,7 @@ public class BlogController {
     }
 
     @GetMapping("/{id}")
-    @Operation(summary="Lấy ra blog bằng ID")
+    @Operation(summary="Récupérer le blog par ID")
     public ResponseEntity<Blog> getBlog(@PathVariable long id){
         
         Blog blog =blogService.getBlog(id);
@@ -51,7 +51,7 @@ public class BlogController {
     }
 
     @GetMapping("/newest")
-    @Operation(summary="Lấy ra danh sách blog mới nhất với số lượng = limit")
+    @Operation(summary="Récupérer la liste des derniers blogs avec nombre = limite")
     public ResponseEntity<List<Blog>> getListNewest(@RequestParam int limit){
         List<Blog> list = blogService.getListNewest(limit);
         return ResponseEntity.ok(list);
@@ -59,7 +59,7 @@ public class BlogController {
 
 
     @PostMapping("/create")
-    @Operation(summary="Tạo mới blog")
+    @Operation(summary="Créer un nouveau blog")
     public ResponseEntity<Blog> create(@RequestBody CreateBlogRequest request){
 
         Blog blog = blogService.createBlog(request);
@@ -69,7 +69,7 @@ public class BlogController {
     }
 
     @PutMapping("/update/{id}")
-    @Operation(summary="Tìm blog bằng id và cập nhật blog đó")
+    @Operation(summary="Recherchez le blog par identifiant et mettez-le à jour")
     public ResponseEntity<Blog> update(@PathVariable long id, @RequestBody CreateBlogRequest request){
 
         Blog blog = blogService.updateBlog(id, request);
@@ -79,7 +79,7 @@ public class BlogController {
     }
 
     @DeleteMapping("/delete/{id}")
-    @Operation(summary="Xóa blog bằng Id")
+    @Operation(summary="Supprimer le blog par identifiant")
     public ResponseEntity<?> delete(@PathVariable long id){
         blogService.deleteBlog(id);
         return ResponseEntity.ok(new MessageResponse("Delete success"));

@@ -32,7 +32,7 @@ public class ProductController {
 
 
     @GetMapping("/")
-    @Operation(summary="Lấy ra danh sách sản phẩm")
+    @Operation(summary="Obtenir la liste des produits")
     public ResponseEntity<List<Product>> getList(){
         List<Product> list = productService.getList();
 
@@ -40,42 +40,42 @@ public class ProductController {
     }
 
     @GetMapping("/newest/{number}")
-    @Operation(summary="Lấy ra danh sách sản phẩm mới nhất giới hạn số lượng = number")
+    @Operation(summary="Obtenir la liste des produits les plus récents limités à la quantité = nombre")
     public ResponseEntity<List<Product>> getListNewst(@PathVariable int number){
         List<Product> list =productService.getListNewst(number);
         return ResponseEntity.ok(list);
     }
 
     @GetMapping("/price")
-    @Operation(summary="Lấy ra danh sách 8 sản phẩm có giá từ thấp nhất đến cao")
+    @Operation(summary="")
     public ResponseEntity<List<Product>> getListByPrice(){
         List<Product> list = productService.getListByPrice();
         return ResponseEntity.ok(list);
     }
 
     @GetMapping("/related/{id}")
-    @Operation(summary="Lấy ra ngẫu nhiên 4 sản phẩm bằng category_id")
+    @Operation(summary="Sélectionnez au hasard 4 produits en utilisantcategory_id")
     public ResponseEntity<List<Product>> getListRelatedProduct(@PathVariable long id){
         List<Product> list = productService.findRelatedProduct(id);
         return ResponseEntity.ok(list);
     }
 
     @GetMapping("/category/{id}")
-    @Operation(summary="Lấy ra danh sách sản phẩm bằng id của danh mục")
+    @Operation(summary="Récupérer la liste des produits par identifiant de catégorie")
     public ResponseEntity<List<Product>> getListProductByCategory(@PathVariable long id){
         List<Product> list =  productService.getListProductByCategory(id);
         return ResponseEntity.ok(list);
     }
 
     @GetMapping("/range")
-    @Operation(summary="Lấy ra danh sách sản phẩm ở các mức giá từ min đến max")
+    @Operation(summary="Récupérer une liste de produits aux prix du min au max")
     public ResponseEntity<List<Product>> getListProductByPriceRange(@RequestParam("id") long id,@RequestParam("min") int min, @RequestParam("max") int max){
         List<Product> list = productService.getListByPriceRange(id, min, max);
         return ResponseEntity.ok(list);
     }
 
     @GetMapping("/{id}")
-    @Operation(summary="Lấy sản phẩm bằng id")
+    @Operation(summary="Obtenir le produit par identifiant")
     public ResponseEntity<Product> getProduct(@PathVariable long id){
         Product product = productService.getProduct(id);
 
@@ -83,14 +83,14 @@ public class ProductController {
     }
 
     @GetMapping("/search")
-    @Operation(summary="Tìm kiếm sản phẩm bằng keyword")
+    @Operation(summary="Rechercher des produits par mot-clé")
     public ResponseEntity<List<Product>> searchProduct(@RequestParam("keyword") String keyword){
         List<Product> list = productService.searchProduct(keyword);
         return ResponseEntity.ok(list);
     }
 
     @PostMapping("/create")
-    @Operation(summary="Tạo mới sản phẩm")
+    @Operation(summary="Créer un nouveau produit")
     public ResponseEntity<Product> createProduct(@RequestBody CreateProductRequest request){
         Product product = productService.createProduct(request);
 
@@ -98,7 +98,7 @@ public class ProductController {
     }
 
     @PutMapping("/update/{id}")
-    @Operation(summary="Tìm sản phẩm bằng id và cập nhật sản phẩm đó")
+    @Operation(summary="Rechercher un produit par identifiant et le mettre à jour")
     public ResponseEntity<Product> updateProduct(@PathVariable long id,@RequestBody CreateProductRequest request){
         Product product = productService.updateProduct(id, request);
 
@@ -106,11 +106,11 @@ public class ProductController {
     }
 
     @DeleteMapping("/delete/{id}")
-    @Operation(summary="Xóa sản phẩm bằng id")
+    @Operation(summary="Supprimer le produit par identifiant")
     public ResponseEntity<?> deleteProduct(@PathVariable long id){
         productService.deleteProduct(id);
 
-        return ResponseEntity.ok(new MessageResponse("Product is d  elete"));
+        return ResponseEntity.ok(new MessageResponse("Product is delete"));
     }
 
 

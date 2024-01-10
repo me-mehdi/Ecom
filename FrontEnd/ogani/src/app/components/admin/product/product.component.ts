@@ -155,7 +155,7 @@ export class ProductComponent implements OnInit {
       next: res =>{
         this.getListProduct();
         this.showForm = false;
-        this.showSuccess("Thêm mới thành công");
+        this.showSuccess("Ajouté avec succès");
 
       },error: err =>{
         this.showError(err.message);
@@ -174,7 +174,7 @@ export class ProductComponent implements OnInit {
       next: res =>{
         this.getListProduct();
         this.showForm = false;
-        this.showSuccess("Cập nhật thành công");
+        this.showSuccess("Mise à jour réussie");
       },error: err =>{
         this.showError(err.message);
       }
@@ -193,7 +193,7 @@ export class ProductComponent implements OnInit {
     this.productService.deleteProduct(this.productForm.id).subscribe({
       next: res =>{
         this.getListProduct();
-        this.showWarn("Xóa thành công");
+        this.showWarn("Supprimé avec succès");
         this.showDelete = false;
       },error: err =>{
         this.showError(err.message);

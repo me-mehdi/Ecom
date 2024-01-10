@@ -14,9 +14,9 @@ import lombok.NoArgsConstructor;
 public class CreateTagRequest {
     
 
-    @NotNull(message = "Tên nhãn rỗng")
-    @NotEmpty(message = "Tên nhãn rỗng")
-    @Schema(description = "Tên nhãn",example="Beauty",required=true)
+    @NotNull(message = "Nom de l'étiquette vide")
+    @NotEmpty(message = "Nom de l'étiquette vide")
+    @Schema(description = "Nom de l'étiquette",example="Beauty",required=true)
     private String name;
 
 	public String getName() {

@@ -71,7 +71,7 @@ export class CategoryComponent implements OnInit {
     this.categoryService.createCategory(name).subscribe({
       next: res =>{
         this.getListCategory();
-        this.showSuccess("Tạo danh mục thành công!");
+        this.showSuccess("Créez un catégorie réussi!");
         this.displayForm = false;
       },error: err=>{
         this.showError(err.message);
@@ -85,7 +85,7 @@ export class CategoryComponent implements OnInit {
     this.categoryService.updateCategory(id,name).subscribe({
       next: res =>{
         this.getListCategory();
-        this.showSuccess("Cập nhật danh mục thành công!");
+        this.showSuccess("Catégorie mis à jour avec succès !");
         this.displayForm = false;
       },error: err =>{
         this.showError(err.message);
@@ -98,7 +98,7 @@ export class CategoryComponent implements OnInit {
     this.categoryService.enableCategory(id).subscribe({
       next: res =>{
         this.getListCategory();
-        this.showSuccess("Cập nhật thành công!!");
+        this.showSuccess("Mise à jour réussie!!");
       },error: err=>{
         this.showError(err.message);
       }
@@ -111,7 +111,7 @@ export class CategoryComponent implements OnInit {
     this.categoryService.deleteCategory(id).subscribe({
       next: res =>{
         this.getListCategory();
-        this.showWarn("Xóa danh mục thành công!!");
+        this.showWarn("Suppression de la catégorie réussie !!");
         this.deleteForm = false;
       },error: err=>{
         this.showError(err.message);

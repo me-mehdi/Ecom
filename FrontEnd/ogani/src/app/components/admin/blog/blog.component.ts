@@ -153,7 +153,7 @@ export class BlogComponent implements OnInit {
       next: res =>{
         this.getList();
         this.showForm = false;
-        this.showSuccess("Tạo mới thành công");
+        this.showSuccess("Créé avec succès");
       },error: err =>{
         this.showError(err.message);
 
@@ -170,7 +170,7 @@ export class BlogComponent implements OnInit {
       next: res =>{
         this.getList();
         this.showForm=false;
-        this.showSuccess("Cập nhật thành công");
+        this.showSuccess("Mise à jour réussie");
       },error: err =>{
         this.showError(err.message);
       }
@@ -182,7 +182,7 @@ export class BlogComponent implements OnInit {
       next: res =>{
         this.getList();
         this.onDelete = false;
-        this.showWarn("Xóa thành công");
+        this.showWarn("Supprimé avec succès");
       },error: err =>{
         console.log(err);
         this.showError(err.message);

@@ -1,9 +1,9 @@
 <div id="wrapper">
 
-    <!-- Sidebar -->
+    <!-- Barre latérale -->
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-        <!-- Sidebar - Brand -->
+        <!-- Marque de la barre latérale -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" routerLink="/admin">
             <div class="sidebar-brand-icon rotate-n-15">
                 <fa-icon [icon]="faceLaugh"></fa-icon>
@@ -11,60 +11,60 @@
             <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
         </a>
 
-        <!-- Divider -->
+        <!-- Séparateur -->
         <hr class="sidebar-divider my-0">
 
-        <!-- Nav Item - Dashboard -->
+        <!-- Élément de navigation - Tableau de bord -->
         <li class="nav-item active">
             <a class="nav-link" routerLink="/admin">
                 <fa-icon [icon]="tachometer"></fa-icon>
-                <span>Dashboard</span></a>
+                <span>Tableau de bord</span></a>
         </li>
 
-        <!-- Divider -->
+        <!-- Séparateur -->
         <hr class="sidebar-divider">
 
-        <!-- Heading -->
+        <!-- En-tête -->
         <div class="sidebar-heading">
             Interface
         </div>
 
-        <!-- Nav Item - Pages Collapse Menu -->
+        <!-- Élément de navigation - Menu déroulant des pages -->
         <li class="nav-item">
-            <a class="nav-link collapsed" routerLink="/admin/category"data-toggle="collapse" data-target="#collapseTwo"
+            <a class="nav-link collapsed" routerLink="/admin/category" data-toggle="collapse" data-target="#collapseTwo"
                 aria-expanded="true" aria-controls="collapseTwo">
                 <fa-icon [icon]="bookmark"></fa-icon>
-                <span>Category</span>
+                <span>Catégorie</span>
             </a>
         </li>
 
-        <!-- Nav Item - Utilities Collapse Menu -->
+        <!-- Élément de navigation - Menu déroulant des utilitaires -->
         <li class="nav-item">
             <a class="nav-link collapsed" routerLink="/admin/product" data-toggle="collapse" data-target="#collapseUtilities"
                 aria-expanded="true" aria-controls="collapseUtilities">
                 <fa-icon [icon]="receipt"></fa-icon>
-                <span>Product</span>
+                <span>Produit</span>
             </a>
         </li>
 
-        <!-- Divider -->
+        <!-- Séparateur -->
         <hr class="sidebar-divider">
 
-        <!-- Heading -->
+        <!-- En-tête -->
         <div class="sidebar-heading">
-            Addons
+            Modules complémentaires
         </div>
 
-        <!-- Nav Item - Pages Collapse Menu -->
+        <!-- Élément de navigation - Menu déroulant des pages -->
         <li class="nav-item">
             <a class="nav-link collapsed" routerLink="/admin/order" data-toggle="collapse" data-target="#collapsePages"
                 aria-expanded="true" aria-controls="collapsePages">
                 <fa-icon [icon]="cart"></fa-icon>
-                <span>Order</span>
+                <span>Commande</span>
             </a>
         </li>
 
-        <!-- Nav Item - Charts -->
+        <!-- Élément de navigation - Graphiques -->
         <li class="nav-item">
             <a class="nav-link" routerLink="/admin/tag">
                 <fa-icon [icon]="tag"></fa-icon>
@@ -76,7 +76,6 @@
                 <span>Blog</span></a>
         </li>
 
-
         <hr class="sidebar-divider d-none d-md-block">
 
     </ul>
@@ -87,17 +86,17 @@
 
             <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-                <!-- Sidebar Toggle (Topbar) -->
+                <!-- Bouton de basculement de la barre latérale (Topbar) -->
                 <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                     <fa-icon [icon]="bars"></fa-icon>
                 </button>
 
-                <!-- Topbar Search -->
+                <!-- Recherche de la barre supérieure -->
                 <form
                     class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                     <div class="input-group">
-                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                            aria-label="Search" aria-describedby="basic-addon2">
+                        <input type="text" class="form-control bg-light border-0 small" placeholder="Rechercher..."
+                            aria-label="Rechercher" aria-describedby="basic-addon2">
                         <div class="input-group-append">
                             <button class="btn btn-primary" type="button">
                                 <fa-icon [icon]="search"></fa-icon>
@@ -106,22 +105,22 @@
                     </div>
                 </form>
 
-                <!-- Topbar Navbar -->
+                <!-- Barre de navigation supérieure -->
                 <ul class="navbar-nav ml-auto">
 
-                    <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                    <!-- Élément de navigation - Menu déroulant de recherche (Visible uniquement en XS) -->
                     <li class="nav-item dropdown no-arrow d-sm-none">
                         <a class="nav-link dropdown-toggle" id="searchDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <fa-icon [icon]="search"></fa-icon>
                         </a>
-                        <!-- Dropdown - Messages -->
+                        <!-- Menu déroulant - Messages -->
                         <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
                             aria-labelledby="searchDropdown">
                             <form class="form-inline mr-auto w-100 navbar-search">
                                 <div class="input-group">
                                     <input type="text" class="form-control bg-light border-0 small"
-                                        placeholder="Search for..." aria-label="Search"
+                                        placeholder="Rechercher..." aria-label="Rechercher"
                                         aria-describedby="basic-addon2">
                                     <div class="input-group-append">
                                         <button class="btn btn-primary" type="button">
@@ -133,31 +132,31 @@
                         </div>
                     </li>
 
-                    <!-- Nav Item - Alerts -->
+                    <!-- Élément de navigation - Alertes -->
                     <li class="nav-item dropdown no-arrow mx-1">
                         <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <fa-icon [icon]="bell"></fa-icon>
-                            <!-- Counter - Alerts -->
+                            <!-- Compteur - Alertes -->
                             <span class="badge badge-danger badge-counter">3+</span>
                         </a>
                     </li>
 
-                    <!-- Nav Item - Messages -->
+                    <!-- Élément de navigation - Messages -->
                     <li class="nav-item dropdown no-arrow mx-1">
                         <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <fa-icon [icon]="evelope"></fa-icon>
-                            <!-- Counter - Messages -->
+                            <!-- Compteur - Messages -->
                             <span class="badge badge-danger badge-counter">7</span>
                         </a>
                     </li>
 
                     <div class="topbar-divider d-none d-sm-block"></div>
 
-                    <!-- Nav Item - User Information -->
+                    <!-- Élément de navigation - Informations sur l'utilisateur -->
                     <li class="nav-item dropdown no-arrow" ngbDropdown>
-                        <a class="nav-link dropdown-toggle"  role="button" ngbDropdownToggle >
+                        <a class="nav-link dropdown-toggle" role="button" ngbDropdownToggle>
                             <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
                             <img class="img-profile rounded-circle"
                                 src="assets/image/author.jpg">
@@ -165,16 +164,16 @@
                         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" ngbDropdownMenu>
                             <a class="dropdown-item" ngbDropdownItem>
                                 <fa-icon [icon]="userIcon"></fa-icon>
-                                Profile
+                                Profil
                             </a>
                             <a class="dropdown-item" ngbDropdownItem>
                                 <fa-icon [icon]="gear"></fa-icon>
-                                Settings
+                                Paramètres
                             </a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" ngbDropdownItem (click)="logout()">
                                 <fa-icon [icon]="logoutIcon"></fa-icon>
-                                Logout
+                                Déconnexion
                             </a>
                         </div>
                     </li>
@@ -185,9 +184,9 @@
             <div class="container-fluid">
                 
                 <!-- <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+                    <h1 class="h3 mb-0 text-gray-800">Tableau de bord</h1>
                     <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
-                            class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                            class="fas fa-download fa-sm text-white-50"></i> Générer un rapport</a>
                 </div> -->
                 <router-outlet></router-outlet>
 

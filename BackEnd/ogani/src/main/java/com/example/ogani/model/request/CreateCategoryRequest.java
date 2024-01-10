@@ -13,9 +13,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CreateCategoryRequest {
     
-    @NotNull(message = "Tên danh mục rỗng")
-    @NotEmpty(message = "Tên danh mục rỗng")
-    @Size(min=5,max=50,message="Độ dài danh mục từ 5-50 ký tự")
+    @NotNull(message = "Nom de catégorie vide")
+    @NotEmpty(message = "Nom de catégorie vide")
+    @Size(min=5,max=50,message="La longueur de la catégorie varie de 5 à 50 caractères")
     private String name;
 
 	public String getName() {

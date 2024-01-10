@@ -33,7 +33,7 @@ public class TagController {
     private TagService tagService;
 
     @GetMapping("/")
-    @Operation(summary="Lấy ra danh sách nhãn")
+    @Operation(summary="Obtenir la liste des étiquettes")
     public ResponseEntity<List<Tag>> getList(){
         
         List<Tag> list = tagService.getListTag();
@@ -42,21 +42,21 @@ public class TagController {
     }
 
     @PostMapping("/create")
-    @Operation(summary="Tạo mới nhãn")
+    @Operation(summary="Créer une nouvelle étiquette")
     public ResponseEntity<Tag> createTag(@RequestBody CreateTagRequest request){
         Tag tag = tagService.createTag(request);
         return ResponseEntity.ok(tag);
     }
 
     @PutMapping("/update/{id}")
-    @Operation(summary="Tìm nhãn bằng id và cập nhật nó")
+    @Operation(summary="Recherchez l'étiquette par identifiant et mettez-la à jour")
     public ResponseEntity<Tag> updateTag(@PathVariable long id,@RequestBody CreateTagRequest request){
         Tag tag = tagService.updateTag(id, request);
 
         return ResponseEntity.ok(tag);
     }
     @PutMapping("/enable/{id}")
-    @Operation(summary="Kích hoạt nhãn bằng id")
+    @Operation(summary="Activer l'étiquette par identifiant")
     public ResponseEntity<?> enabled(@PathVariable long id){
         tagService.enableTag(id);
         return ResponseEntity.ok(new MessageResponse("Enable tag success"));
@@ -64,7 +64,7 @@ public class TagController {
     }
 
     @DeleteMapping("/delete/{id}")
-    @Operation(summary="Xóa nhãn bằng id")
+    @Operation(summary="Supprimer l'étiquette par identifiant")
     public ResponseEntity<?> deleteTag(@PathVariable long id){
         tagService.deleleTag(id);
 

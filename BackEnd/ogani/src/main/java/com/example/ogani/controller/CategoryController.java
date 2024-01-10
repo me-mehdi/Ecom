@@ -32,14 +32,14 @@ public class CategoryController {
     private CategoryService categoryService;
 
     @GetMapping("/")
-    @Operation(summary="Lấy danh sách danh mục")
+    @Operation(summary="Obtenez la liste des catégories")
     public ResponseEntity<?> getListCategory(){
         List<Category> categories = categoryService.findAll();
         return ResponseEntity.ok(categories);
     }
 
     @GetMapping("/enabled")
-    @Operation(summary="Lấy ra danh sách danh mục đã kích hoạt")
+    @Operation(summary="Obtenez la liste des catégories activées")
     public ResponseEntity<List<Category>> getListEnabled(){
         List<Category> categories = categoryService.getListEnabled();
         return ResponseEntity.ok(categories);
@@ -55,24 +55,24 @@ public class CategoryController {
     }
 
     @PutMapping("/update/{id}")
-    @Operation(summary="Tìm danh mục bằng id và cập nhật danh mục đó")
+    @Operation(summary="Recherchez la catégorie par identifiant et mettez-la à jour")
     public ResponseEntity<?> updateCategory(@PathVariable long id, @Valid @RequestBody CreateCategoryRequest request){
         Category category = categoryService.updateCategory(id, request);
         return ResponseEntity.ok(category);
     }
 
     @PutMapping("/enable/{id}")
-    @Operation(summary="Kích hoạt danh mục bằng id")
+    @Operation(summary="Activer la catégorie par identifiant")
     public ResponseEntity<?> enabled(@PathVariable long id){
         categoryService.enableCategory(id);
-        return ResponseEntity.ok(new MessageResponse("Cập nhật thành công"));
+        return ResponseEntity.ok(new MessageResponse("Mise à jour réussie"));
     }
 
     @DeleteMapping("/delete/{id}")
-    @Operation(summary="Xóa danh mục bằng id")
+    @Operation(summary="Supprimer la catégorie par identifiant")
     public ResponseEntity<?> delete(@PathVariable long id){
         categoryService.deleteCategory(id);
-        return ResponseEntity.ok(new MessageResponse("Xóa thành công"));
+        return ResponseEntity.ok(new MessageResponse("Supprimé avec succès"));
     }
 
 

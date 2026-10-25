@@ -37,8 +37,7 @@ Import database from ```oganisql.sql```. Using default account:
 - [Maven](https://mvnrepository.com/)
 - [Angular](https://angular.io/)
 - [PrimeNG](https://primeng.org/)
-## Author
-[Dương Tuấn Phương](https://github.com/duongtuanphuong)
+
 
 
 ------------
